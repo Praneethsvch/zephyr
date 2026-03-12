@@ -1008,7 +1008,7 @@ static int stm32_sdmmc_hw_activate(const struct device *dev)
 	err = stm32_sdmmc_clock_enable(priv);
 	if (err) {
 		LOG_ERR("clock enable failed: %d", err);
-		goto out;
+		goto out_sleep_pins;
 	}
 
 	/* Clean peripheral state */
